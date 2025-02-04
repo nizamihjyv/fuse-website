@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- 
+    SITE 1101 Principles of Information Systems 
+    (c)2024 by Kaklik Jabbarli
+    Submitted in partial fulfillment of the requirements of the course.
+-->
+<html>
+    <head>
+        <title>Homework 3: Team members</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">  
+        <link rel="icon" type="image/x-icon" href="media/web_icon.ico">  
+        <script type="text/javascript" src="scripts.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">       
+    </head>
+    <body>
+        <main>
+            <header>
+                <h2>&emsp;Meet Our Team Members</h2>
+            </header>
+            <div class="topnav">
+                <a class="active" href="index.html">Home Page</a>
+                <a href="hour-of-code.html">Hour of Code</a>
+                <a href="team-members.html">Our Team</a>
+                <a href="web-project.html">Website Project</a>
+                <a href="code-artist.html">Code Art?</a>
+            </div>
+            <p>&emsp;<strong>Our team is composed of four dedicated individuals</strong> who work collaboratively to achieve<br>&emsp;our goals. Nizami Hajiyev, Asim Mirzakhanli, Kaklik Jabbarli, and Tamerlan Guliyev form a cohesive<br>&emsp;and dynamic group. Together, we approach every project with focus and commitment, striving for success.</p>
+            <table cellspacing="20">
+                <tr>
+                    <td>
+                        <p>Kaklik Jabbarli from School of IT and Engineering<br>ADA email: kjabbarli22973@ada.edu.az<br>Major: Bachelor of Science in Computer Science<br><strong>"I am into coding."</strong></p>
+                        <p>Tamerlan Guliyev from School of IT and Engineering<br>ADA email: tguliyev23081@ada.edu.az<br>Major: Bachelor of Science in Computer Engineering<br><strong>"I am future engineer."</strong></p>
+                        <p>Nizami Hajiyev from School of IT and Engineering<br>ADA email: nhajiyev17126@ada.edu.az<br>Major: Bachelor of Science in Computer Science<br><strong>"I like Counter-Strike."</strong></p>
+                        <p>Asim Mirzakhanli from School of IT and Engineering<br>ADA email: amizakhanli23339@ada.edu.az<br>Major: Bachelor of Science in Information Technology<br><strong>"I like video games."</strong></p>
+                    </td>
+                    <td>
+                        &emsp;<img id="t1" class="team" src="media/team.jpg" width="400" height="320" alt="Our Team 72">
+                    </td>
+                </tr>
+            </table>
+        </main>
+        <script>
+            // Select the iframe element
+            const iframe = document.getElementById('t1');
+        
+            // Function to create a subtle pulse effect
+            function pulse() {
+                let start = null;
+                let scale = 1;
+                const scaleSpeed = 0.005; // Speed of pulsing
+                const maxScale = 1.035; // Slight maximum size increase
+                const minScale = 1.02; // Slight minimum size decrease
+        
+                // Function to update iframe's scale
+                function animate(time) {
+                    if (!start) start = time;
+                    const progress = time - start;
+        
+                    // Use a sine wave for a gentle pulsing effect
+                    scale = minScale + Math.sin(progress * scaleSpeed) * (maxScale - minScale);
+        
+                    // Apply the transformation to the iframe (without changing position)
+                    iframe.style.transform = `scale(${scale})`;
+        
+                    // Continue the animation indefinitely
+                    requestAnimationFrame(animate);
+                }
+        
+                // Start the pulse animation
+                requestAnimationFrame(animate);
+            }
+        
+            // Trigger the pulse effect
+            pulse();
+        </script>        
+        <footer>
+            <p>&emsp;<strong>#Homework 3: How websites work?</strong><br>
+            &emsp;<strong>2024</strong> | Team Syntax Squad</p>
+        </footer>
+    </body>
+</html>
